@@ -8,12 +8,15 @@ import {
 import Home from './Home'
 import Users from './Users'
 import Senators from './Senators'
+import Teams from './Teams'
+import '../App.css';
 
 class FantasyCongress extends Component {
 
   state = {
     users: [],
-    senators: []
+    senators: [],
+    teams: []
   }
 
   componentDidMount(){
@@ -25,6 +28,16 @@ class FantasyCongress extends Component {
     .then(res => res.json())
     .then((fetchedSenators) => {this.setState({senators: fetchedSenators})})
 
+    fetch('http://localhost:3000/teams')
+    .then(res => res.json())
+    .then((fetchedTeams) => {this.setState({teams: fetchedTeams})})
+
+  }
+
+  addTeam = (team) => {
+    this.setState({
+      teams: [...this.state.team, team]
+    })
   }
 
   render(){
@@ -47,12 +60,18 @@ class FantasyCongress extends Component {
             <li>
               <Link to="/senators">Senators</Link>
             </li>
+            <li>
+              <Link to="/teams">Teams</Link>
+            </li>
           </ul>
         </nav>
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
+          <Route path="/teams">
+          teams={this.state.teams.map ((team) => <Teams team={team}/>)}
+          </Route>
           <Route path="/senators">
           senators={this.state.senators.map ((senator) => <Senators senator={senator}/>)}
           </Route>

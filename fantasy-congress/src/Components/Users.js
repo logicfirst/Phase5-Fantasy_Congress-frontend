@@ -6,7 +6,6 @@ class Users extends Component {
       <div>
         <ul>
           <li>Username: {this.props.user.username}</li>
-          <li>Password: {this.props.user.password}</li>
           <li>Name: {this.props.user.first_name}</li>
           <li>email: {this.props.user.email}</li>
         </ul>
