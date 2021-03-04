@@ -6,7 +6,7 @@ class Teams extends Component {
       <div>
         <button onClick={() => this.props.deleteTeam(this.props.team)}>Delete Team</button>
         <ul>
-          <li>User: {this.props.team.user.first_name}</li>
+          <li>User: {this.props.team.user.username}</li>
           <li>Team Name: {this.props.team.team_name}</li>
           
         </ul>

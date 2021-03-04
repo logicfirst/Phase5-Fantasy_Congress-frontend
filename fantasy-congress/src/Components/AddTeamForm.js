@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 class AddTeamForm extends Component {
 
   state = {
-    user_id: "",
+    username: "",
     team_name: ""
   }
 
@@ -38,7 +38,7 @@ class AddTeamForm extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <div>
-            <input onChange={this.handleChange} type="text" name="user_id" placeholder="User Id"/>
+            <input onChange={this.handleChange} type="text" name="user_id" placeholder="User id"/>
             <input onChange={this.handleChange} type="text" name="team_name" placeholder="Team Name"/>
           </div>
           <button type="submit">Add Team</button>
