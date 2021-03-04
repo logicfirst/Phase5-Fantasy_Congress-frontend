@@ -26,7 +26,7 @@ class AddTeamForm extends Component {
       body: JSON.stringify(newTeam)
     }
 
-    fetch('http://localhost:3000/cards', reqPack)
+    fetch('http://localhost:3000/teams', reqPack)
     .then((res) => res.json)
     .then(postedTeam => {
       this.props.addTeam(postedTeam)

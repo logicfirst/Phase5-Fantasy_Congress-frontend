@@ -9,6 +9,7 @@ import Home from './Home'
 import Users from './Users'
 import Senators from './Senators'
 import Teams from './Teams'
+import AddTeamForm from './AddTeamForm'
 import '../App.css';
 
 class FantasyCongress extends Component {
@@ -38,6 +39,14 @@ class FantasyCongress extends Component {
     this.setState({
       teams: [...this.state.team, team]
     })
+  }
+
+  deleteTeam = (deletedTeam) => {
+    fetch('http://localhost:3000/teams/' + deletedTeam.id, {method: 'DELETE'})
+    .then(res => res.json())
+    .then(() => {this.setState({
+      teams: this.state.teams.filter((team) => team !=deletedTeam)
+    })})
   }
 
   render(){
@@ -70,7 +79,8 @@ class FantasyCongress extends Component {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/teams">
-          teams={this.state.teams.map ((team) => <Teams team={team}/>)}
+          teams={this.state.teams.map ((team) => <Teams team={team}
+          deleteTeam={this.deleteTeam}/>)}
           </Route>
           <Route path="/senators">
           senators={this.state.senators.map ((senator) => <Senators senator={senator}/>)}
@@ -80,6 +90,7 @@ class FantasyCongress extends Component {
           </Route>
           <Route path="/">
             <Home />
+            <h3>Add Team</h3><AddTeamForm addTeam={this.addTeam}/>
           </Route>
         </Switch>
       </div>
