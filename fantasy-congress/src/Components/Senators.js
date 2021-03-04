@@ -5,9 +5,9 @@ class Senators extends Component {
     return(
       <div>
         <ul>
-          <li>Senator id: {this.props.senator.sen_alpha_id}</li>
           <li>Name: {this.props.senator.first_name} {this.props.senator.last_name}</li>
-          <li>Team id: {this.props.senator.team_id}</li>
+          <li>Senator id: {this.props.senator.sen_alpha_id}</li>
+          <li>Team: {this.props.senator.team.team_name}</li>
         </ul>
       </div>
     )
