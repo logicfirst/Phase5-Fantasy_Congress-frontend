@@ -38,10 +38,10 @@ class AddTeamForm extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <div>
-            <input onChange={this.handleChange} type="text" name="user_id" placeholder="User id"/>
+            <input onChange={this.handleChange} type="text" name="user_id" placeholder="User Id"/>
             <input onChange={this.handleChange} type="text" name="team_name" placeholder="Team Name"/>
-          </div>
           <button type="submit">Add Team</button>
+          </div>
         </form>
       </div>
     )

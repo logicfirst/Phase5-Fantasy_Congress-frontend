@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import SortedSenatorsByParty from './SortedSenatorsByParty'
+import '../App.css'
 
 class SearchSenators extends Component{
 
@@ -12,11 +13,14 @@ class SearchSenators extends Component{
   render(){
     return(
       <div>
-        <h3>Search Senators</h3>
+        <h4>Search Senators by Last Name</h4>
         <input type="text" placeholder="Search Senators"
         onChange={(event) => this.handleSearch(event)}/>
         <hr/>
+        <div className="repo-container">
         {this.props.filteredSenators.map((filteredSenator) => <SortedSenatorsByParty filteredSenator={filteredSenator}/>)}
+        
+        </div>
       </div>
     )
   }

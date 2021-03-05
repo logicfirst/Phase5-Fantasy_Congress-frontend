@@ -65,7 +65,7 @@ class FantasyCongress extends Component {
   render(){
     return(
       <div>
-        <h1>Fantasy Congress</h1>
+        <h1 className="header-font">Fantasy Congress</h1>
         {/* <Home />
         users={this.state.users.map ((user) => <Users user={user}/>)}
         senators={this.state.senators.map ((senator) => <Senators senator={senator}/>)} */}
@@ -92,20 +92,26 @@ class FantasyCongress extends Component {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/teams">
-          teams={this.state.teams.map ((team) => <Teams team={team}
-          deleteTeam={this.deleteTeam}/>)}
+          <div className="add-team-repo-container"><h3>Add Team</h3><AddTeamForm addTeam={this.addTeam}/></div>
+          <div className="repo-container">{this.state.teams.map ((team) => <Teams team={team}
+          deleteTeam={this.deleteTeam}/>)}</div>
           </Route>
+
           <Route path="/searchsenators">
           {/* senators={this.state.senators.map ((senator) => <Senators senator={senator}/>)} */}
             <SearchSenators handleSearchOnChange={this.handleSearchOnChange}
             filteredSenators={this.state.filteredSenators} />
           </Route>
+
           <Route path="/users">
-          users={this.state.users.map ((user) => <Users user={user}/>)}
+            
+          <div className="repo-container"><h3>Users</h3>{this.state.users.map ((user) => <Users user={user}/>)}</div>
           </Route>
+
           <Route path="/">
             <Home />
-            <h3>Add Team</h3><AddTeamForm addTeam={this.addTeam}/>
+            {/* <div className="repo-container"><h3>Add Team</h3><AddTeamForm addTeam={this.addTeam}/>
+            </div> */}
           </Route>
         </Switch>
       </div>

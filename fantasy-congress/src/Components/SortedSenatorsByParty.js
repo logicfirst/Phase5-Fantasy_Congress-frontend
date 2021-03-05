@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import '../App.css'
 
 class SortedSenatorsByParty extends Component {
   render(){
@@ -9,7 +10,7 @@ class SortedSenatorsByParty extends Component {
           <li>Team: {this.props.filteredSenator.team.team_name}</li>
           <li>Senator id: {this.props.filteredSenator.sen_alpha_id}</li>
           <li>Title: {this.props.filteredSenator.title}</li>
-          <li>Title: {this.props.filteredSenator.state}</li>
+          <li>State: {this.props.filteredSenator.state}</li>
           <li>Party: {this.props.filteredSenator.party}</li>
           <li>D.O.B: {this.props.filteredSenator.date_of_birth}</li>
           <li>Gender: {this.props.filteredSenator.gender}</li>
