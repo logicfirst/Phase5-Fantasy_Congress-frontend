@@ -71,7 +71,7 @@ class FantasyCongress extends Component {
         senators={this.state.senators.map ((senator) => <Senators senator={senator}/>)} */}
         <Router>
       <div>
-        <nav>
+        <nav className="nav">
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -93,7 +93,7 @@ class FantasyCongress extends Component {
         <Switch>
           <Route path="/teams">
           <div className="add-team-repo-container"><h3>Add Team</h3><AddTeamForm addTeam={this.addTeam}/></div>
-          <div className="repo-container">{this.state.teams.map ((team) => <Teams team={team}
+          <div className="team-repo-container">{this.state.teams.map ((team) => <Teams team={team}
           deleteTeam={this.deleteTeam}/>)}</div>
           </Route>
 
@@ -105,7 +105,8 @@ class FantasyCongress extends Component {
 
           <Route path="/users">
             
-          <div className="repo-container"><h3>Users</h3>{this.state.users.map ((user) => <Users user={user}/>)}</div>
+          <div className="team-repo-container"><h3>Users</h3><hr/>{this.state.users.map ((user) => <Users user={user}/>)}
+          </div>
           </Route>
 
           <Route path="/">

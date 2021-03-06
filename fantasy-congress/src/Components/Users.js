@@ -10,6 +10,7 @@ class Users extends Component {
           <li>Name: {this.props.user.first_name}</li>
           <li>email: {this.props.user.email}</li>
         </ul>
+        <hr/>
       </div>
     )
   }

@@ -14,6 +14,13 @@
   overflow: hidden;
 }
 
+.nav {
+  font-family: 'Noto+Serif';
+  background-color: burlywood;
+  width: 10%;
+  margin-left: 50px;
+}
+
 .header-font {
   font-family: 'Noto+Serif';
   
@@ -36,6 +43,7 @@
   margin-left: 50px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   overflow: scroll;
+  background-color: bisque;
   
 }
 .add-team-repo-container {
@@ -44,6 +52,15 @@
   margin-left: 50px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   overflow: scroll;
+}
+
+.team-repo-container {
+  width: 35%;
+  height: 300px;
+  margin-left: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  overflow: scroll;
+  background-color: bisque;
 }
 @media screen and (max-width: 600px) {
   .repo-container {
