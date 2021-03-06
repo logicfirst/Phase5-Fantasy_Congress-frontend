@@ -103,16 +103,13 @@ class FantasyCongress extends Component {
             filteredSenators={this.state.filteredSenators} />
           </Route>
 
-          <Route path="/users">
-            
+          <Route path="/users">  
           <div className="team-repo-container"><h3>Users</h3><hr/>{this.state.users.map ((user) => <Users user={user}/>)}
           </div>
           </Route>
 
           <Route path="/">
             <Home />
-            {/* <div className="repo-container"><h3>Add Team</h3><AddTeamForm addTeam={this.addTeam}/>
-            </div> */}
           </Route>
         </Switch>
       </div>
