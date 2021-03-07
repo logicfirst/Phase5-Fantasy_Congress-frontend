@@ -12,6 +12,7 @@ import Teams from './Teams'
 import AddTeamForm from './AddTeamForm'
 import '../App.css';
 import SearchSenators from './SearchSenators'
+import Bills from './Bills'
 
 class FantasyCongress extends Component {
 
@@ -19,7 +20,8 @@ class FantasyCongress extends Component {
     users: [],
     senators: [],
     teams: [],
-    filteredSenators: []
+    filteredSenators: [],
+    billData: {}
   }
 
   componentDidMount(){
@@ -36,6 +38,13 @@ class FantasyCongress extends Component {
     .then(res => res.json())
     .then((fetchedTeams) => {this.setState({teams: fetchedTeams})})
 
+    
+      const headers = { 'Content-Type': 'application/json',
+      'X-API-Key': '' }
+      fetch('https://api.propublica.org/congress/v1/117/senate/bills/introduced.json?offset=0', { headers })
+          .then(response => response.json())
+          .then((billData) => {console.log(billData)});
+          
   }
 
   addTeam = (team) => {
@@ -48,7 +57,7 @@ class FantasyCongress extends Component {
     fetch('http://localhost:3000/teams/' + deletedTeam.id, {method: 'DELETE'})
     .then(res => res.json())
     .then(() => {this.setState({
-      teams: this.state.teams.filter((team) => team !=deletedTeam)
+      teams: this.state.teams.filter((team) => team !==deletedTeam)
     })})
   }
 
@@ -83,6 +92,9 @@ class FantasyCongress extends Component {
               <Link to="/searchsenators">Senators</Link>
             </li>
             <li>
+              <Link to="/bills">Bills</Link>
+            </li>
+            <li>
               <Link to="/teams">Teams</Link>
             </li>
           </ul>
@@ -98,9 +110,15 @@ class FantasyCongress extends Component {
           </Route>
 
           <Route path="/searchsenators">
-          {/* senators={this.state.senators.map ((senator) => <Senators senator={senator}/>)} */}
-            <SearchSenators handleSearchOnChange={this.handleSearchOnChange}
-            filteredSenators={this.state.filteredSenators} />
+            <div><SearchSenators handleSearchOnChange={this.handleSearchOnChange}
+            filteredSenators={this.state.filteredSenators} /></div>
+          </Route>
+
+          <Route path="/bills">
+            <div className="bill-container">
+              <Bills/>
+            {/* {this.state.bills.map ((bill) => <Bills bill={bill}/>)} */}
+            </div>
           </Route>
 
           <Route path="/users">  

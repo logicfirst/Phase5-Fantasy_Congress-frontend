@@ -23,8 +23,8 @@
 
 .search-nav {
   font-family: 'Noto+Serif';
-  background-color: burlywood;
-  width: 10%;
+ 
+  width: 35%;
   margin-left: 50px;
 }
 
@@ -49,6 +49,18 @@
   height: 700px;
   margin-left: 50px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  overflow: scroll;
+  background-color: bisque;
+  
+}
+
+.bill-container {
+  border-width: 5px;
+  width: 45%;
+  height: 300px;
+  margin-right: 50px;
+  margin-left: 50%;
+  box-shadow: inset 10px 10px 20px rgba(0, 0, 0, 0.3);
   overflow: scroll;
   background-color: bisque;
   
