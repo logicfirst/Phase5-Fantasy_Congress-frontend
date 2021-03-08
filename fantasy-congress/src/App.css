@@ -19,12 +19,19 @@
   background-color: burlywood;
   width: 10%;
   margin-left: 50px;
+  opacity: 50%;
+  border-radius: 10px;
 }
 
 .search-nav {
   font-family: 'Noto+Serif';
- 
   width: 35%;
+  margin-left: 50px;
+}
+
+.login-nav {
+  font-family: 'Noto+Serif';
+  width: 50%;
   margin-left: 50px;
 }
 
@@ -51,6 +58,8 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   overflow: scroll;
   background-color: bisque;
+  opacity: 60%;
+  border-radius: 10px;
   
 }
 
@@ -60,16 +69,18 @@
   height: 300px;
   margin-right: 50px;
   margin-left: 50%;
-  box-shadow: inset 10px 10px 20px rgba(0, 0, 0, 0.3);
+  box-shadow:  inset 10px 10px 20px rgba(0, 0, 0, 0.3);
   overflow: scroll;
   background-color: bisque;
+  opacity: 60%;
+  border-radius: 10px;
   
 }
 .add-team-repo-container {
   width: 35%;
   height: 100px;
   margin-left: 50px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 10px 10px 20px rgba(0, 0, 0, 0.3);
   overflow: scroll;
 }
 
@@ -80,6 +91,8 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   overflow: scroll;
   background-color: bisque;
+  opacity: 50%;
+  border-radius: 10px;
 }
 @media screen and (max-width: 600px) {
   .repo-container {

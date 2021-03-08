@@ -13,6 +13,9 @@ import AddTeamForm from './AddTeamForm'
 import '../App.css';
 import SearchSenators from './SearchSenators'
 import Bills from './Bills'
+import LoginForm from './LoginForm'
+import Dashboard from './Dashboard/Dashboard'
+import Preferences from './Preferences/Preferences'
 
 class FantasyCongress extends Component {
 
@@ -21,7 +24,9 @@ class FantasyCongress extends Component {
     senators: [],
     teams: [],
     filteredSenators: [],
-    billData: {}
+    billData: {},
+    currentUser: null
+
   }
 
   componentDidMount(){
@@ -40,7 +45,7 @@ class FantasyCongress extends Component {
 
     
       const headers = { 'Content-Type': 'application/json',
-      'X-API-Key': '' }
+      'X-API-Key': '2HwLq9PKKHxs9dkLQvUFOGIAptAgIn74XZ4l3go9' }
       fetch('https://api.propublica.org/congress/v1/117/senate/bills/introduced.json?offset=0', { headers })
           .then(response => response.json())
           .then((billData) => {console.log(billData)});
@@ -82,8 +87,11 @@ class FantasyCongress extends Component {
       <div>
         <nav className="nav">
           <ul>
+          <li>
+              <Link to="/"></Link>
+            </li>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/home">Home</Link>
             </li>
             <li>
               <Link to="/users">Users</Link>
@@ -106,12 +114,14 @@ class FantasyCongress extends Component {
           <Route path="/teams">
           <div className="add-team-repo-container"><h3>Add Team</h3><AddTeamForm addTeam={this.addTeam}/></div>
           <div className="team-repo-container">{this.state.teams.map ((team) => <Teams team={team}
-          deleteTeam={this.deleteTeam}/>)}</div>
+          deleteTeam={this.deleteTeam}
+          />)}</div>
           </Route>
 
           <Route path="/searchsenators">
             <div><SearchSenators handleSearchOnChange={this.handleSearchOnChange}
-            filteredSenators={this.state.filteredSenators} /></div>
+            filteredSenators={this.state.filteredSenators} />
+            </div>
           </Route>
 
           <Route path="/bills">
@@ -127,8 +137,13 @@ class FantasyCongress extends Component {
           </Route>
 
           <Route path="/">
+            <LoginForm />
+          </Route>
+
+          <Route path="/home">
             <Home />
           </Route>
+
         </Switch>
       </div>
     </Router>
