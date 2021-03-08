@@ -64,12 +64,12 @@
 }
 
 .bill-container {
-  border-width: 5px;
-  width: 45%;
+  border-width: 10px;
+  width: 55%;
   height: 300px;
   margin-right: 50px;
-  margin-left: 50%;
-  box-shadow:  inset 10px 10px 20px rgba(0, 0, 0, 0.3);
+  margin-left: 40%;
+  box-shadow:  inset 10px 10px 20px rgba(0, 0, 0, 0.5);
   overflow: scroll;
   background-color: bisque;
   opacity: 60%;

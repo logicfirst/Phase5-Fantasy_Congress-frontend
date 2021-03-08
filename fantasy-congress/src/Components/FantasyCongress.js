@@ -25,7 +25,9 @@ class FantasyCongress extends Component {
     teams: [],
     filteredSenators: [],
     billData: {},
-    currentUser: null
+    bills: [],
+    currentUser: null,
+    isLoggedIn: true
 
   }
 
@@ -46,9 +48,11 @@ class FantasyCongress extends Component {
     
       const headers = { 'Content-Type': 'application/json',
       'X-API-Key': '2HwLq9PKKHxs9dkLQvUFOGIAptAgIn74XZ4l3go9' }
-      fetch('https://api.propublica.org/congress/v1/117/senate/bills/introduced.json?offset=0', { headers })
+      fetch('https://api.propublica.org/congress/v1/117/senate/bills/introduced.json?offset=20', { headers })
           .then(response => response.json())
-          .then((billData) => {console.log(billData)});
+          .then((billData) => {{console.log(billData.results[0].bills[1])}{this.setState({bills: billData.results[0].bills})}}
+  
+          );
           
   }
 
@@ -87,9 +91,7 @@ class FantasyCongress extends Component {
       <div>
         <nav className="nav">
           <ul>
-          <li>
-              <Link to="/"></Link>
-            </li>
+            
             <li>
               <Link to="/home">Home</Link>
             </li>
@@ -125,9 +127,9 @@ class FantasyCongress extends Component {
           </Route>
 
           <Route path="/bills">
-            <div className="bill-container">
-              <Bills/>
-            {/* {this.state.bills.map ((bill) => <Bills bill={bill}/>)} */}
+            <div className="bill-container"><h3>Bills Introduced in the 117th Congress(Senate)</h3>
+            {this.state.bills.map((bill) => <Bills bill={bill}/>)}
+            <button>back</button><button>next</button>20
             </div>
           </Route>
 

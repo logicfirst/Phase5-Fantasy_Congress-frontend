@@ -1,28 +1,26 @@
 import React, {Component} from 'react'
 
 class Bills extends Component {
-
-  // state = {
-  //   billData: []
-  // }
-
-  // componentDidMount (){
-    
-  //   const headers = { 'Content-Type': 'application/json',
-  //     'X-API-Key': '2HwLq9PKKHxs9dkLQvUFOGIAptAgIn74XZ4l3go9' }
-  //     fetch('https://api.propublica.org/congress/v1/117/senate/bills/introduced.json?offset=0', { headers })
-  //         .then(response => response.json())
-  //         .then((billData) => {this.setState({bills: billData})});
-    
-  // }
   
   render(){
     return(
       <div>
+        <div>
         <ul>
-          {/* <li>User: {this.props.results.bill_id}</li> */}
-          {/* <li>Team Name: {this.props.bills.title}</li> */}
+          <li>Bill Id: {this.props.bill.bill_id}</li>
+          <li>Title: {this.props.bill.title}</li>
+          <li>Sponsor: {this.props.bill.sponsor_title}{this.props.bill.sponsor_name}</li>
+          <li>Introduced Date: {this.props.bill.introduced_date}</li>
+          <li>Active: {this.props.bill.active}</li>
+          <li>Last Major Action: {this.props.bill.latest_major_action}</li>
+          <li>Last Major Action Date: {this.props.bill.latest_major_action_date}</li>
+          <li>House Passage: {this.props.bill.house_passage}</li>
+          <li>Senate Passage: {this.props.bill.senate_passage}</li>
+          <li>Enacted: {this.props.bill.enacted}</li>
+          <li>Vetoed: {this.props.bill.vetoed}</li>
         </ul>
+        <hr/>
+        </div>
       </div>
     )
   }
