@@ -14,8 +14,7 @@ import '../App.css';
 import SearchSenators from './SearchSenators'
 import Bills from './Bills'
 import LoginForm from './LoginForm'
-import Dashboard from './Dashboard/Dashboard'
-import Preferences from './Preferences/Preferences'
+import { Redirect } from 'react-router-dom'
 
 class FantasyCongress extends Component {
 
@@ -27,7 +26,7 @@ class FantasyCongress extends Component {
     billData: {},
     bills: [],
     currentUser: null,
-    isLoggedIn: false
+    isLoggedIn: false,
 
   }
 
@@ -99,13 +98,13 @@ class FantasyCongress extends Component {
               <Link to="/users">Users</Link>
             </li>
             <li>
+              <Link to="/teams">Teams</Link>
+            </li>
+            <li>
               <Link to="/searchsenators">Senators</Link>
             </li>
             <li>
               <Link to="/bills">Bills</Link>
-            </li>
-            <li>
-              <Link to="/teams">Teams</Link>
             </li>
           </ul>
         </nav>
@@ -138,13 +137,14 @@ class FantasyCongress extends Component {
           </div>
           </Route>
 
-          <Route path="/">
+          <Route exact path="/fantasycongress">
             <LoginForm />
           </Route>
 
           <Route path="/home">
             <Home />
           </Route>
+
 
         </Switch>
       </div>
