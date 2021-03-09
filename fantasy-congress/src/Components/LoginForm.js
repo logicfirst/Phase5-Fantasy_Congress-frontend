@@ -2,6 +2,14 @@ import React, {Component} from 'react'
 
 class LoginForm extends Component {
 
+  state = {
+    isLoggedIn: false
+  }
+
+  handleOnClick(){
+    this.setState({isLoggedIn: true})
+   }
+
   render(){
     return(
       <div className="login-nav">

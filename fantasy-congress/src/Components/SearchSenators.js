@@ -13,14 +13,14 @@ class SearchSenators extends Component{
   render(){
     return(
       <div>
-        <div className="search-nav">
+        <div className="add-team-repo-container">
         <h3>Search Senators by Last Name</h3>
         <input type="text" placeholder="Search Senators"
         onChange={(event) => this.handleSearch(event)}/></div>
-        <div className="repo-container">
+        <div className="repo-container"><h3>Senators of the 117th Congress</h3>
         {this.props.filteredSenators.map((filteredSenator) => <SortedSenatorsByParty filteredSenator={filteredSenator}/>)}
-        
         </div>
+        <hr/>
       </div>
     )
   }

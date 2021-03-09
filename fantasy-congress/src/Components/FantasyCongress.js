@@ -27,7 +27,7 @@ class FantasyCongress extends Component {
     billData: {},
     bills: [],
     currentUser: null,
-    isLoggedIn: true
+    isLoggedIn: false
 
   }
 
@@ -50,7 +50,7 @@ class FantasyCongress extends Component {
       'X-API-Key': '2HwLq9PKKHxs9dkLQvUFOGIAptAgIn74XZ4l3go9' }
       fetch('https://api.propublica.org/congress/v1/117/senate/bills/introduced.json?offset=20', { headers })
           .then(response => response.json())
-          .then((billData) => {{console.log(billData.results[0].bills[1])}{this.setState({bills: billData.results[0].bills})}}
+          .then((billData) => {{this.setState({bills: billData.results[0].bills})}}
   
           );
           
