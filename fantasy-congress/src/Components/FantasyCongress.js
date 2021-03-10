@@ -28,7 +28,8 @@ class FantasyCongress extends Component {
     bills: [],
     currentUser: null,
     isLoggedIn: false,
-    selectedTeamName: ""
+    selectedTeamName: {team_name:"unknown"},
+    teamSenators: []
 
   }
 
@@ -59,9 +60,17 @@ class FantasyCongress extends Component {
 
   getTeamName = (team) => {
     this.setState({
-      selectedTeamName: team.team_name
+      selectedTeamName: team
     })
   }
+
+  getTeamSenators = () => {
+    let teamSenators = this.state.senators.filter(senators =>
+      senators.team.team_name == this.state.selectedTeamName.team_name).sort((a, b) => 
+      (a.party > b.party) ? -1 : 1)
+      return teamSenators
+  }
+
 
   addTeam = (team) => {
     this.setState({
@@ -120,6 +129,7 @@ class FantasyCongress extends Component {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
+          
           <Route path="/teams">
           <div className="add-team-repo-container"><h3>Add Team</h3><AddTeamForm addTeam={this.addTeam}/></div>
           <div className="team-repo-container">{this.state.teams.map ((team) => <Teams team={team}
@@ -142,22 +152,22 @@ class FantasyCongress extends Component {
           </Route>
 
           <Route path="/users">  
-          <div className="team-repo-container"><h3>Users</h3><hr/>{this.state.users.map ((user) => <Users user={user}/>)}
+          <div className="user-container"><h3>Users</h3><hr/>{this.state.users.map ((user) => <Users user={user}/>)}
           </div>
           </Route>
 
           <Route path='/showteam'>
-            <ShowTeam selectedTeamName={this.props.selectedTeamName}/>
-          </Route>
-
-          <Route exact path="/fantasycongress">
-            <LoginForm />
+            <ShowTeam selectedTeamName={this.state.selectedTeamName}
+            senators={this.getTeamSenators()}/>
           </Route>
 
           <Route path="/home">
             <Home />
           </Route>
-
+          
+          <Route exact path="/fantasycongress">
+            <LoginForm />
+          </Route>
 
         </Switch>
       </div>

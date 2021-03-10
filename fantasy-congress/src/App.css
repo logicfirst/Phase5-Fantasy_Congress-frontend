@@ -79,7 +79,7 @@
 
 .team-container {
   border-width: 10px;
-  width: 45%;
+  width: 30%;
   height: 400px;
   margin-right: 50px;
   margin-left: 25%;
@@ -104,6 +104,17 @@
 .team-repo-container {
   width: 35%;
   height: 300px;
+  margin-left: 50px;
+  box-shadow: inset 10px 10px 20px rgba(0, 0, 0, 0.3);
+  overflow: scroll;
+  background-color: bisque;
+  opacity: 60%;
+  border-radius: 10px;
+}
+
+.user-container {
+  width: 35%;
+  height: 400px;
   margin-left: 50px;
   box-shadow: inset 10px 10px 20px rgba(0, 0, 0, 0.3);
   overflow: scroll;

@@ -8,10 +8,10 @@ state = {
 }
 
 setRedirect = () => {
+  this.props.getTeamName(this.props.team) 
   this.setState({
     redirect: true
   })
-  this.props.getTeamName(this.props.team) 
 }
 renderRedirect = () => {
   if (this.state.redirect) {
