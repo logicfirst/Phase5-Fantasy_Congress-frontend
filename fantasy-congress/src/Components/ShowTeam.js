@@ -4,7 +4,13 @@ class ShowTeam extends Component {
 
   render (){
     return(
-      <div>ShowTeam</div>
+      <div className='team-container'>
+        <h3>Team: {this.props.selectedTeamName}</h3>
+        <h3>Senators:</h3>
+        <ul>
+          <li>Senator</li>
+        </ul>
+      </div>
     )
   }
 }

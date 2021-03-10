@@ -11,7 +11,6 @@ class Bills extends Component {
           <li>Title: {this.props.bill.title}</li>
           <li>Sponsor: {this.props.bill.sponsor_title}{this.props.bill.sponsor_name}</li>
           <li>Introduced Date: {this.props.bill.introduced_date}</li>
-          <li>Active: {this.props.bill.active}</li>
           <li>Last Major Action: {this.props.bill.latest_major_action}</li>
           <li>Last Major Action Date: {this.props.bill.latest_major_action_date}</li>
           <li>House Passage: {this.props.bill.house_passage}</li>

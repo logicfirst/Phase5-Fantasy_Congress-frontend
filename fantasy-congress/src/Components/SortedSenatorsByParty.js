@@ -5,6 +5,7 @@ class SortedSenatorsByParty extends Component {
   render(){
     return(
       <div>
+        <button>Edit Team</button>
         <ul>
           <li>Name: {this.props.filteredSenator.first_name} {this.props.filteredSenator.last_name}</li>
           <li>Team: {this.props.filteredSenator.team.team_name}</li>
@@ -23,6 +24,7 @@ class SortedSenatorsByParty extends Component {
           <li>url: {this.props.filteredSenator.url}</li>
           <li>Phone: {this.props.filteredSenator.phone}</li>
         </ul>
+        <hr/>
       </div>
     )
   }

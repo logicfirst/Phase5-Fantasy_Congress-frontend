@@ -14,6 +14,7 @@ import '../App.css';
 import SearchSenators from './SearchSenators'
 import Bills from './Bills'
 import LoginForm from './LoginForm'
+import ShowTeam from './ShowTeam'
 import { Redirect } from 'react-router-dom'
 
 class FantasyCongress extends Component {
@@ -27,6 +28,7 @@ class FantasyCongress extends Component {
     bills: [],
     currentUser: null,
     isLoggedIn: false,
+    selectedTeamName: ""
 
   }
 
@@ -53,6 +55,12 @@ class FantasyCongress extends Component {
   
           );
           
+  }
+
+  getTeamName = (team) => {
+    this.setState({
+      selectedTeamName: team.team_name
+    })
   }
 
   addTeam = (team) => {
@@ -116,6 +124,7 @@ class FantasyCongress extends Component {
           <div className="add-team-repo-container"><h3>Add Team</h3><AddTeamForm addTeam={this.addTeam}/></div>
           <div className="team-repo-container">{this.state.teams.map ((team) => <Teams team={team}
           deleteTeam={this.deleteTeam}
+          getTeamName={this.getTeamName}
           />)}</div>
           </Route>
 
@@ -135,6 +144,10 @@ class FantasyCongress extends Component {
           <Route path="/users">  
           <div className="team-repo-container"><h3>Users</h3><hr/>{this.state.users.map ((user) => <Users user={user}/>)}
           </div>
+          </Route>
+
+          <Route path='/showteam'>
+            <ShowTeam selectedTeamName={this.props.selectedTeamName}/>
           </Route>
 
           <Route exact path="/fantasycongress">

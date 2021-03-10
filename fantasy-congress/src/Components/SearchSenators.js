@@ -16,7 +16,7 @@ class SearchSenators extends Component{
         <div className="add-team-repo-container">
         <h3>Search Senators by Last Name</h3>
         <input type="text" placeholder="Search Senators"
-        onChange={(event) => this.handleSearch(event)}/></div>
+        onChange={(event) => this.handleSearch(event)}/> Sorted by Party</div>
         <div className="repo-container"><h3>Senators of the 117th Congress</h3>
         {this.props.filteredSenators.map((filteredSenator) => <SortedSenatorsByParty filteredSenator={filteredSenator}/>)}
         </div>

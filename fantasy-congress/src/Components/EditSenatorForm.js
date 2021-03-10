@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { Redirect } from "react-router-dom";
 
-class EditTeamForm extends Component {
+class EditSenatorForm extends Component {
 
   render (){
     return(
@@ -11,4 +11,4 @@ class EditTeamForm extends Component {
     )
   }
 }
-export default EditTeamForm
+export default EditSenatorForm
