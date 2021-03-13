@@ -20,7 +20,7 @@ class Senators extends Component {
           <li>State Rank: {this.props.senator.state_rank}</li>
           <li>Missed Votes Percentage: {this.props.senator.missed_votes_pct}</li>
           <li>Votes with Party Percentage: {this.props.senator.votes_with_party_pct}</li>
-          <li>url: {this.props.senator.url}</li>
+          <li>url: {this.props.senator.url}{this.props.senator.url}</li>
           <li>Phone: {this.props.senator.phone}</li>
         </ul>
       </div>

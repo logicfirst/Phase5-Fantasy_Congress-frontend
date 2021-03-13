@@ -21,7 +21,7 @@ class SortedSenatorsByParty extends Component {
           <li>State Rank: {this.props.filteredSenator.state_rank}</li>
           <li>Missed Votes Percentage: {this.props.filteredSenator.missed_votes_pct}</li>
           <li>Votes with Party Percentage: {this.props.filteredSenator.votes_with_party_pct}</li>
-          <li>url: {this.props.filteredSenator.url}</li>
+          <li>url: <a href={this.props.filteredSenator.url} target='_blank'>{this.props.filteredSenator.url}</a></li>
           <li>Phone: {this.props.filteredSenator.phone}</li>
         </ul>
         <hr/>
