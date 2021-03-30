@@ -1,5 +1,3 @@
 # Phase5-Fantasy_Congress-frontend
 Flatiron School Phase 5 Project - Fantasy Congress - React frontend
-This part of the application can be cloned down to VSCode or other Coding text editor.
-The Ruby on Rails backend repository is at Phase5-Fantasy_Congress-backend.
-A Demo of this application can be seen at https://youtu.be/Z0Qcg_z5lVQ
+This was an individual project using React for the frontend framework and Rails as the backend server. Postgresql was used as the database. This application uses the US Senate and it's Senators as players in a game similar to fantasy football. The Senators are drafted and the game folows bills as they move through the process of being voted on. The application is still in its design and development phase with many more features to be added. The React backend repository can be found at Phase5-Fantasy_Congress-backend. https://youtu.be/Z0Qcg_z5lVQ
